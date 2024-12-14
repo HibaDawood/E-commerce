@@ -1,11 +1,10 @@
-'use client';
+"use client";
 import React from "react";
 import BestSellingCard from "./bestSellingCard";
-import { useAppSelector } from "@/app/store/hooks";
 
 const BestSelling = () => {
-  const product = useAppSelector((state) => state.products);
  
+
   const bestSell = [
     {
       src: "/picture/shirt.png",
@@ -15,7 +14,7 @@ const BestSelling = () => {
       price: 150,
       category: "tops",
       products: "shirt",
-      discount: 20
+      discount: 20,
     },
     {
       src: "/picture/pant-2.png",
@@ -25,7 +24,7 @@ const BestSelling = () => {
       price: 120,
       category: "pants",
       products: "pants",
-      discount: 0
+      discount: 0,
     },
     {
       src: "/picture/shoes-01.png",
@@ -35,13 +34,12 @@ const BestSelling = () => {
       price: 100,
       category: "shoes",
       products: "shoes",
-      discount: 0
+      discount: 0,
     },
-    
   ];
 
   return (
-    <div className="pb-[100px] pt-[50px]">
+    <div className="pb-[100px] pt-[50px] overflow-x-hidden">
       <div className="text-center pb-14">
         <h1 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl text-myBlue mb-4">
           Best Selling Products
@@ -54,7 +52,7 @@ const BestSelling = () => {
 
       {/* Best Selling Products */}
       <div className="flex flex-wrap justify-center gap-5">
-        {bestSell.map((items: any, i) => (
+        {bestSell.map((items, i) => (
           <BestSellingCard
             key={i}
             src={items.src}

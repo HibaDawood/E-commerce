@@ -3,7 +3,7 @@ import { FaShoppingBag } from "react-icons/fa";
 
 const Hero = () => {
   return (
-    <div className="mb-[50px] mx-14">
+    <div className="mb-[50px] mx-14 overflow-x-hidden">
       <div className="hero min-h-[80vh] custom-img bg-fixed bg-center bg-no-repeat ">
         <div className="hero-overlay bg-opacity-30"></div>
         <div className="hero-content text-neutral-content text-center">

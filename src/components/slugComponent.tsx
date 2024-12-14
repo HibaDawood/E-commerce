@@ -1,13 +1,13 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react"; 
+import React, { useState } from "react";
 
 const SlugComponent = () => {
   const [path, setPath] = useState("");
   return (
     <div className="mt-8">
       <Image
-        src={ path ? path : "/picture/shirt.png"}
+        src={path ? path : "/picture/shirt.png"}
         alt="ecommerce"
         width={400}
         height={300}
@@ -41,7 +41,6 @@ const SlugComponent = () => {
             onClick={() => setPath("/picture/pant-8.png")}
           />
         </div>
-       
       </div>
     </div>
   );

@@ -11,8 +11,8 @@ export const cartSlice = createSlice({
   reducers: {
     // add to cart functionality
     addToCart(state, action) {
-      let uuid = Math.floor(1000 + Math.random() * 9000);
-      let newObj = { ...action.payload, uuid };
+      const uuid = Math.floor(1000 + Math.random() * 9000);
+      const newObj = { ...action.payload, uuid };
       state.push(newObj);
     },
     //delete from cart
@@ -21,7 +21,7 @@ export const cartSlice = createSlice({
     },
     //addition of item
     addCart(state, action) {
-      let obj = state.find(
+      const obj = state.find(
         (val) =>
           val.id == action.payload.id &&
           val.color == action.payload.color &&
@@ -29,7 +29,7 @@ export const cartSlice = createSlice({
       );
       if (obj) {
         ++obj.qty;
-        let newState = state.filter((val) => val.id !== obj?.id);
+        const newState = state.filter((val) => val.id !== obj?.id);
         state = [...newState, obj];
         return;
       }
@@ -37,7 +37,7 @@ export const cartSlice = createSlice({
 
     // substract of item
     substractCart(state, action) {
-      let obj = state.find(
+      const obj = state.find(
         (val) =>
           val.id == action.payload.id &&
           val.color == action.payload.color &&
@@ -48,7 +48,7 @@ export const cartSlice = createSlice({
           return state.filter((val) => val.uuid !== obj?.uuid);
         }
         --obj.qty;
-        let newState = state.filter((val) => val.uuid !== obj?.uuid);
+        const newState = state.filter((val) => val.uuid !== obj?.uuid);
         state = [...newState, obj];
         return;
       }

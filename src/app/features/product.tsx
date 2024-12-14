@@ -1,19 +1,16 @@
-import { createSlice } from '@reduxjs/toolkit'
-import { Product } from '@/app/utils/types';
-import { products } from '../utils/mock';
-
+import { createSlice } from "@reduxjs/toolkit";
+import { Product } from "@/app/utils/types";
+import { products } from "../utils/mock";
 
 // Define the initial state using that type
 const initialState: Product[] = products;
 
 export const productSlice = createSlice({
-  name: 'product',
+  name: "product",
   // `createSlice` will infer the state type from the `initialState` argument
   initialState,
-  reducers: {
- 
-  },
-})
-export const { } = productSlice.actions;
+  reducers: {},
+});
+export const {} = productSlice.actions;
 
-export default productSlice.reducer
+export default productSlice.reducer;

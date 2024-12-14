@@ -4,7 +4,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="bg-myPeach/45">
+    <div className="bg-myPeach/45 overflow-x-hidden">
       <footer className="text-gray-600 body-font">
         <div className="container px-5 py-5 mx-auto">
           <div className="flex flex-wrap md:text-left text-center order-first">
@@ -168,13 +168,13 @@ const Footer = () => {
                 height={100}
                 width={100}
               />
-              <span className="ml-3 text-xl">Cheng's Collection</span>
+              <span className="ml-3 text-xl">Chengs Collection</span>
             </a>
             <p
               className="sm:ml-6 sm:mt-0 mt-4 text-xs cursor-pointer font-semibold tracking-tight text-myBlue 
             hover:text-myBlue/80"
             >
-              © 2024 Cheng's Collection
+              © 2024 Chengs Collection
             </p>
             <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
               <a className="text-myBlue">

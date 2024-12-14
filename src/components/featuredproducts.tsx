@@ -1,92 +1,92 @@
-'use client';
+"use client";
 
-import React from 'react';
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import BestSellingCard from './bestSellingCard';
-import { useAppSelector } from '@/app/store/hooks';
+import BestSellingCard from "./bestSellingCard";
 
 
 const Featuredproducts = () => {
-// My Data
+  // My Data
 
-const bestSell = [
-  {
-    src: "/picture/sh-6.png",
-    title: "Red Black Shirt",
-    alt: "Red Black Shirt",
-    description: "Beautiful Shirts for Girls",
-    price: 150,
-    category: "tops",
-    products: "shirt",
-    discount: 20
-  },
-  {
-    src: "/picture/pant-2.png",
-    title: "white Pant",
-    alt: "Girls Pants",
-    description: "Unique Pants for Girls",
-    price: 120,
-    category: "pants",
-    products: "pants",
-    discount: 0
-  },
-  {
-    src: "/picture/shoes-01.png",
-    title: "Black-Pink Shoes",
-    alt: "Top-notch shoes",
-    description: "Top-notch Shoes for Girls",
-    price: 100,
-    category: "shoes",
-    products: "shoes",
-    discount: 0
-  },
-  {
-    src: "/picture/pant-8.png",
-    title: "Comfortable soft Trouser",
-    alt: "Comfortable soft Trouser",
-    description: "Comfortable soft Trouser for Girls",
-    price: 90,
-    category: "pants",
-    products: "pants",
-    discount: 0
-  },
-  {
-    src: "/picture/acc-9.png",
-    title: "Elegant Earrings",
-    alt: "Elegant Earrings",
-    description: "Unique Earrings for Girls",
-    price: 80,
-    category: "accesories",
-    products: "accesories",
-    discount: 0
-  },
-  {
-    src: "/picture/sh-2.png",
-    title: "Kuromi & Melody Shoes",
-    alt: "Top-notch shoes",
-    description: "Cute Cartoons Shoes for Girls",
-    price: 100,
-    category: "shoes",
-    products: "shoes",
-    discount: 15
-  },
-  {
-    src: "/picture/pant-5.png",
-    title: "Plane Comfortable Pant",
-    alt: "Plane Comfortable Pant",
-    description: "Beautiful Pant for Girls",
-    price: 90,
-    category: "pants",
-    products: "pants",
-    discount: 0
-  },
-  
-];
+  const bestSell = [
+    {
+      src: "/picture/sh-6.png",
+      title: "Red Black Shirt",
+      alt: "Red Black Shirt",
+      description: "Beautiful Shirts for Girls",
+      price: 150,
+      category: "tops",
+      products: "shirt",
+      discount: 20,
+    },
+    {
+      src: "/picture/pant-2.png",
+      title: "white Pant",
+      alt: "Girls Pants",
+      description: "Unique Pants for Girls",
+      price: 120,
+      category: "pants",
+      products: "pants",
+      discount: 0,
+    },
+    {
+      src: "/picture/shoes-01.png",
+      title: "Black-Pink Shoes",
+      alt: "Top-notch shoes",
+      description: "Top-notch Shoes for Girls",
+      price: 100,
+      category: "shoes",
+      products: "shoes",
+      discount: 0,
+    },
+    {
+      src: "/picture/pant-8.png",
+      title: "Comfortable soft Trouser",
+      alt: "Comfortable soft Trouser",
+      description: "Comfortable soft Trouser for Girls",
+      price: 90,
+      category: "pants",
+      products: "pants",
+      discount: 0,
+    },
+    {
+      src: "/picture/acc-9.png",
+      title: "Elegant Earrings",
+      alt: "Elegant Earrings",
+      description: "Unique Earrings for Girls",
+      price: 80,
+      category: "accesories",
+      products: "accesories",
+      discount: 0,
+    },
+    {
+      src: "/picture/sh-2.png",
+      title: "Kuromi & Melody Shoes",
+      alt: "Top-notch shoes",
+      description: "Cute Cartoons Shoes for Girls",
+      price: 100,
+      category: "shoes",
+      products: "shoes",
+      discount: 15,
+    },
+    {
+      src: "/picture/pant-5.png",
+      title: "Plane Comfortable Pant",
+      alt: "Plane Comfortable Pant",
+      description: "Beautiful Pant for Girls",
+      price: 90,
+      category: "pants",
+      products: "pants",
+      discount: 0,
+    },
+  ];
 
-      {/* carousel setting */}
-  var settings = {
+  {
+    /* carousel setting */
+  }
+  const settings = {
     dots: true,
     infinite: true,
     slidesToShow: 3,
@@ -103,33 +103,34 @@ const bestSell = [
           slidesToShow: 3,
           slidesToScroll: 3,
           infinite: true,
-          dots: true
-        }
+          dots: true,
+        },
       },
       {
         breakpoint: 600,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2
-        }
+          initialSlide: 2,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
-    <div className='mt-[100px] mb-[100px]'>
-
-        {/* Heading */}
-       <div className="text-center pb-14">
-        <h1 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl text-myBlue mb-4
-        text-center capitalize">
+    <div className="mt-[100px] mb-[100px]">
+      {/* Heading */}
+      <div className="text-center pb-14">
+        <h1
+          className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl text-myBlue mb-4
+        text-center capitalize"
+        >
           Featured Products
         </h1>
 
@@ -138,9 +139,9 @@ const bestSell = [
         </div>
       </div>
 
-{/* Carousel */}
+      {/* Carousel */}
       <Slider {...settings}>
-      {bestSell.map((items: any, i) => (
+        {bestSell.map((items, i) => (
           <BestSellingCard
             key={i}
             src={items.src}
@@ -155,7 +156,7 @@ const bestSell = [
         ))}
       </Slider>
     </div>
-  )
-}
+  );
+};
 
-export default Featuredproducts
+export default Featuredproducts;

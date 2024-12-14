@@ -1,11 +1,10 @@
-'use client';
+"use client";
 import React from "react";
 import Link from "next/link";
 import { NavigationMenuDemo } from "./navLinks";
 import { RxHamburgerMenu } from "react-icons/rx";
 import Image from "next/image";
 import { useAppSelector } from "@/app/store/hooks";
-
 
 const Navbar = () => {
   const cart = useAppSelector((state) => state.cart);
@@ -102,7 +101,7 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-end">
-        <Link href={'/cart'}>
+        <Link href={"/cart"}>
           <div tabIndex={0} role="button" className="pr-4 cursor-pointer group">
             <div className="indicator">
               <svg
@@ -121,16 +120,15 @@ const Navbar = () => {
               </svg>
               {cart.length > 0 && (
                 <span
-                className="badge badge-sm font-semibold indicator-item text-myBlue 
+                  className="badge badge-sm font-semibold indicator-item text-myBlue 
           group-hover:text-myWhite group-hover:bg-myBlue"
-              >
-               {cart.length}
-              </span>
+                >
+                  {cart.length}
+                </span>
               )}
-              
             </div>
           </div>
-          </Link>
+        </Link>
       </div>
     </div>
   );

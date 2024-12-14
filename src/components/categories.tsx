@@ -4,7 +4,7 @@ import React from "react";
 
 const Categories = () => {
   return (
-    <div className="pb-[100px] pt-[100px]">
+    <div className="pb-[100px] pt-[100px] overflow-x-hidden">
       <div className="text-center pb-10">
         <h1 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl text-myBlue mb-4">
           Our Categories

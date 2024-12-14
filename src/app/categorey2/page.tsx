@@ -11,7 +11,7 @@ const Category2 = () => {
       price: 100,
       category: "pants",
       products: "pants",
-      discount: 0
+      discount: 0,
     },
     {
       src: "/picture/pant-2.png",
@@ -21,7 +21,7 @@ const Category2 = () => {
       price: 120,
       category: "pants",
       products: "pants",
-      discount: 0
+      discount: 0,
     },
     {
       src: "/picture/pant-3.png",
@@ -31,7 +31,7 @@ const Category2 = () => {
       price: 110,
       category: "pants",
       products: "pants",
-      discount: 10
+      discount: 10,
     },
     {
       src: "/picture/pant-4.png",
@@ -41,7 +41,7 @@ const Category2 = () => {
       price: 100,
       category: "pants",
       products: "pants",
-      discount: 0
+      discount: 0,
     },
     {
       src: "/picture/pant-5.png",
@@ -51,7 +51,7 @@ const Category2 = () => {
       price: 90,
       category: "pants",
       products: "pants",
-      discount: 10
+      discount: 10,
     },
     {
       src: "/picture/pant-6.png",
@@ -61,7 +61,7 @@ const Category2 = () => {
       price: 100,
       category: "pants",
       products: "pants",
-      discount: 0
+      discount: 0,
     },
     {
       src: "/picture/pant-7.png",
@@ -71,7 +71,7 @@ const Category2 = () => {
       price: 120,
       category: "pants",
       products: "pants",
-      discount: 0
+      discount: 0,
     },
     {
       src: "/picture/pant-8.png",
@@ -81,7 +81,7 @@ const Category2 = () => {
       price: 90,
       category: "pants",
       products: "pants",
-      discount: 0
+      discount: 0,
     },
     {
       src: "/picture/pant-9.png",
@@ -91,7 +91,7 @@ const Category2 = () => {
       price: 110,
       category: "pants",
       products: "pants",
-      discount: 11
+      discount: 11,
     },
   ];
   return (

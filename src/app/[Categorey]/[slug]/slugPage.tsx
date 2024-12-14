@@ -1,17 +1,14 @@
 "use client";
 import SlugComponent from "@/components/slugComponent";
 import React, { useState } from "react";
-import { FaShoppingCart } from "react-icons/fa";
 import { PiHeartFill } from "react-icons/pi";
 import { TiMinus, TiPlus } from "react-icons/ti";
-import { addToCart } from "@/app/features/cart";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { useAppSelector } from "../../store/hooks";
 import AddToCartToast from "@/components/ui/addToCartToast";
 
-const SlugPage = ({ params }: { params: { slug: string } }) => {
+const SlugPage = ({}: { params: { slug: string } }) => {
   const product = useAppSelector((state) => state.products);
   const slug = product.filter((val) => val.slug);
-  // const dispatch = useAppDispatch();
 
   const [cartItem, setCartItem] = useState({
     id: slug[0].id,
@@ -189,18 +186,7 @@ const SlugPage = ({ params }: { params: { slug: string } }) => {
                 )}
               </div>
 
-              {/* Buttons */}
-              {/* <button
-                onClick={() => dispatch(addToCart(cartItem))}
-                className="outline outline-myWhite outline-1 text-myWhite group hover:outline-myPeach 
-       btn bg-myBlue/60 hover:bg-myBlue/80 h-5 w-36 rounded-3xl"
-              >
-                <div className="mr-2 h-4 w-4 group-hover:text-myPeach duration-300 text-lg">
-                  <FaShoppingCart />
-                </div>
-                Add to Card
-              </button> */}
-              <AddToCartToast cartItem={cartItem}/>
+              <AddToCartToast cartItem={cartItem} />
             </div>
             <button
               className="mt-4 outline outline-myWhite outline-1 text-myWhite group hover:outline-myPeach 

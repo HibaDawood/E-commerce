@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 
 const About = () => {
@@ -47,8 +46,10 @@ const About = () => {
               className="absolute inset-0 -m-6 rotate-1 rounded-xl shadow-inner lg:-m-8
          dark:bg-blue-900/75"
             ></div>
-            <div className="relative rounded-lg shadow-lg w-[48rem] h-72 about-img bg-no-repeat
-            bg-cover"></div>
+            <div
+              className="relative rounded-lg shadow-lg w-[48rem] h-72 about-img bg-no-repeat
+            bg-cover"
+            ></div>
           </div>
         </div>
       </div>

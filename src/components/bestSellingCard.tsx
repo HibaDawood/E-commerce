@@ -6,7 +6,6 @@ import Link from "next/link";
 
 const BestSellingCard = ({
   src,
-  alt,
   title,
   description,
   price,
@@ -76,7 +75,6 @@ const BestSellingCard = ({
 
           {/* Button div */}
           <div className="-mt-4 mx-3">
-            
             <button
               className="outline outline-myWhite outline-1 text-myWhite group hover:outline-myPeach 
        btn bg-myBlue/60 hover:bg-myBlue/80 h-5 w-36 rounded-3xl"

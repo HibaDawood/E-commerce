@@ -2,7 +2,7 @@ import React from "react";
 
 const Promotion = () => {
   return (
-    <div className="pb-[50px] pt-[50px]">
+    <div className="pb-[50px] pt-[50px] overflow-x-hidden">
       {/* Heading */}
       <div className="text-center pb-14">
         <h1 className="scroll-m-20 text-4xl font-bold tracking-tight lg:text-5xl text-myBlue mb-4">
@@ -29,7 +29,7 @@ const Promotion = () => {
               </h1>
               <p className="mt-4 scroll-m-20 pb-2 text-base font-medium tracking-tight first:mt-0 text-myWhite">
                 Get up to 50% off on your favorite items! Shop now and save big
-                before the offer ends. Don't miss out!
+                before the offer ends. Do not miss out!
               </p>
             </div>
           </div>

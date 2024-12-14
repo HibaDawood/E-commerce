@@ -5,7 +5,6 @@ import Promotion from "@/components/promotion";
 import Services from "@/components/services";
 import Hero from "@/components/ui/hero";
 
-
 export default function Home() {
   return (
     <div className="bg-myWhite/60">

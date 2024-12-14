@@ -25,7 +25,7 @@ const Contact = () => {
                 dark:text-dark-6 text-myBlue/70"
                 >
                   Have questions about our trendy tops, chic pants, stylish
-                  accessories, or must-have shoes for girls? We're here to help!
+                  accessories, or must-have shoes for girls? We are here to help!
                   Reach out to us anytime, and our friendly team will ensure you
                   have the best shopping experience.
                 </p>
@@ -791,7 +791,7 @@ const Contact = () => {
 export default Contact;
 
 const ContactTextArea = ({
-  row,
+ 
   placeholder,
   name,
   defaultValue,
@@ -805,7 +805,7 @@ const ContactTextArea = ({
     <>
       <div className="mb-6">
         <textarea
-          // rows={row}
+      
           placeholder={placeholder}
           name={name}
           className="w-full resize-none rounded border border-stroke px-[14px] py-3 text-base text-body-color

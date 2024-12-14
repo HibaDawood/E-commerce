@@ -11,7 +11,7 @@ const Category2 = () => {
       price: 100,
       category: "shoes",
       products: "shoes",
-      discount: 0
+      discount: 0,
     },
     {
       src: "/picture/shoes-2.png",
@@ -21,7 +21,7 @@ const Category2 = () => {
       price: 110,
       category: "shoes",
       products: "shoes",
-      discount: 0
+      discount: 0,
     },
     {
       src: "/picture/shoes-white.png",
@@ -31,17 +31,17 @@ const Category2 = () => {
       price: 110,
       category: "shoes",
       products: "shoes",
-      discount: 17
+      discount: 17,
     },
     {
       src: "/picture/shoes.png",
       title: "Baby Pink Color Shoes",
       alt: "Baby Pink Color Shoes",
-      description:"Cute color shoes for Girls",
+      description: "Cute color shoes for Girls",
       price: 120,
       category: "shoes",
       products: "shoes",
-      discount: 0
+      discount: 0,
     },
     {
       src: "/picture/sh-1.png",
@@ -51,7 +51,7 @@ const Category2 = () => {
       price: 150,
       category: "shoes",
       products: "shoes",
-      discount: 0
+      discount: 0,
     },
     {
       src: "/picture/sh-2.png",
@@ -61,7 +61,7 @@ const Category2 = () => {
       price: 100,
       category: "shoes",
       products: "shoes",
-      discount: 10
+      discount: 10,
     },
     {
       src: "/picture/sh-3.png",
@@ -71,7 +71,7 @@ const Category2 = () => {
       price: 120,
       category: "shoes",
       products: "shoes",
-      discount: 0
+      discount: 0,
     },
     {
       src: "/picture/sh-5.png",
@@ -81,7 +81,7 @@ const Category2 = () => {
       price: 150,
       category: "shoes",
       products: "shoes",
-      discount: 0
+      discount: 0,
     },
     {
       src: "/picture/sh-6.png",
@@ -91,9 +91,8 @@ const Category2 = () => {
       price: 100,
       category: "shoes",
       products: "shoes",
-      discount: 15
+      discount: 15,
     },
- 
   ];
   return (
     <div className="mb-[100px] mt-[60px]">

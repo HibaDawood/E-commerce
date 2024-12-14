@@ -1,18 +1,19 @@
-'use client';
+"use client";
 import CartCard from "@/components/cartCard";
 import { useAppSelector } from "../store/hooks";
 
 const CartPage = () => {
-    const cartArray = useAppSelector((state) => state.cart);
-    const total = cartArray.reduce((total, arr) =>
-         {return(total + ((arr.price-(arr.price*arr.discount)/100))*arr.qty)}, 0)
-  
+  const cartArray = useAppSelector((state) => state.cart);
+  const total = cartArray.reduce((total, arr) => {
+    return total + (arr.price - (arr.price * arr.discount) / 100) * arr.qty;
+  }, 0);
+
   return (
     <div>
-       <div className="grid lg:grid-cols-3 grid-cols-1 mx-20">
+      <div className="grid lg:grid-cols-3 grid-cols-1 mx-20">
         {/* Items */}
         <div className="col-span-2">
-          <CartCard/>
+          <CartCard />
         </div>
         {/* Summary */}
         <div className="bg-myBlue/5 p-5 rounded-xl">
@@ -79,7 +80,7 @@ const CartPage = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CartPage
+export default CartPage;
