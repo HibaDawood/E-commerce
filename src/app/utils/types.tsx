@@ -2,10 +2,10 @@
 export type Product = {
     id: number;
     title: string;
-    image?: any;
+    image?: any ;
     slug: string;
     price: number;
-    discount?: any;
+    discount?: any
     category: string;
     description: string;
     size: string[];
@@ -16,10 +16,10 @@ export type Product = {
 export type Cart = {
     id: number;
     title: string;
-    image?: string | undefined | boolean;
+    image?: any;
     slug: string;
     price: number;
-    discount?: undefined | any
+    discount?: bigint;
     category: string;
     size: string;
     qty: number;
