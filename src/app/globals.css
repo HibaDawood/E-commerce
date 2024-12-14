@@ -2,20 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.custom-img {
+    background-image: url("../../public/picture/image.png");
 }
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.promo-child-1 {
+    background-image: url("../../public/picture/image copy 3.png");
+}
+.promo-child-2 {
+    background-image: url("../../public/picture/image copy 4.png");
+}
+.about-img{
+    background-image: url("../../public/picture/ab-4.png");
+}
+.myDiscountChit{
+    transform: rotate(-90deg) translate(0, -69px);
+    transform-origin: 100% 0;
 }
