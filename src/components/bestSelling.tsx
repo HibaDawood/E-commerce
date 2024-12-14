@@ -4,7 +4,6 @@ import BestSellingCard from "./bestSellingCard";
 
 const BestSelling = () => {
  
-
   const bestSell = [
     {
       src: "/picture/shirt.png",

@@ -11,7 +11,6 @@ export type Product = {
     size: string[];
     color: string[];
     qty: number;
-    
 };
 export type Cart = {
     id: number;
