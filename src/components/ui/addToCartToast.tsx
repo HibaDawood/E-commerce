@@ -7,9 +7,9 @@ import { FaShoppingCart } from "react-icons/fa";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const AddToCartToast = ( {cartItem}:any) =>{
+const AddToCartToast = ( {cartItem}: any ) => {
   const dispatch = useAppDispatch();
-  const notify = () => 
+  const notify = () =>
     toast("🌷 Product Added Succesfuly", {
       position: "top-left",
       autoClose: 3000,
