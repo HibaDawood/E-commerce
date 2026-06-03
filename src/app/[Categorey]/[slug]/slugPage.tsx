@@ -6,22 +6,32 @@ import { TiMinus, TiPlus } from "react-icons/ti";
 import { useAppSelector } from "../../store/hooks";
 import AddToCartToast from "@/components/ui/addToCartToast";
 
-const SlugPage = ({}: { params: { slug: string } }) => {
+// Interface ko direct props object ke liye fix kiya
+interface SlugPageProps {
+  params: { slug: string };
+}
+
+// Params ko sahi tarike se accept kiya
+const SlugPage = ({ params }: SlugPageProps) => {
   const product = useAppSelector((state) => state.products);
-  const slug = product.filter((val) => val.slug);
+  
+  // Custom filter logic based on the passed slug
+  const slugData = product.filter((val) => val.slug === params.slug);
+  const currentProduct = slugData[0] || product[0]; // Fallback if not found
 
   const [cartItem, setCartItem] = useState({
-    id: slug[0].id,
-    title: slug[0].title,
-    image: slug[0].image[0],
-    slug: slug[0].slug,
-    price: slug[0].price,
-    discount: slug[0].discount,
-    category: slug[0].category,
-    size: slug[0].size[0],
-    qty: slug[0].qty,
-    color: slug[0].color[0],
+    id: currentProduct.id,
+    title: currentProduct.title,
+    image: currentProduct.image[0],
+    slug: currentProduct.slug,
+    price: currentProduct.price,
+    discount: currentProduct.discount,
+    category: currentProduct.category,
+    size: currentProduct.size[0],
+    qty: currentProduct.qty,
+    color: currentProduct.color[0],
   });
+
   return (
     <div>
       <div className="container px-5 mx-auto mt-[15px]">
@@ -32,44 +42,23 @@ const SlugPage = ({}: { params: { slug: string } }) => {
           <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-5 lg:mt-0">
             {/* title */}
             <h2 className="text-base title-font text-myBlue/70 tracking-widest font-medium">
-              {/* Girls Tops */}
               women Tops
             </h2>
-            <h1
-              className="scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0 mb-1
-             text-myBlue"
-            >
+            <h1 className="scroll-m-20 text-3xl font-semibold tracking-tight first:mt-0 mb-1 text-myBlue">
               Our High Quality Products
             </h1>
 
             {/* Rating */}
             <div className="rating -pb-6">
-              <input
-                type="radio"
-                name="rating-4"
-                className="mask mask-star-2 bg-orange-500"
-              />
-              <input
-                type="radio"
-                name="rating-4"
-                className="mask mask-star-2 bg-orange-500"
-              />
-              <input
-                type="radio"
-                name="rating-4"
-                className="mask mask-star-2 bg-orange-500"
-              />
-              <input
-                type="radio"
-                name="rating-4"
-                className="mask mask-star-2 bg-orange-500"
-              />
-              <input
-                type="radio"
-                name="rating-4"
-                className="mask mask-star-2 bg-orange-500"
-                defaultChecked
-              />
+              {[...Array(5)].map((_, i) => (
+                <input
+                  key={i}
+                  type="radio"
+                  name="rating-4"
+                  className="mask mask-star-2 bg-orange-500"
+                  defaultChecked={i === 4}
+                />
+              ))}
             </div>
             <div className="divider mt-1 mb-1"></div>
 
@@ -81,28 +70,28 @@ const SlugPage = ({}: { params: { slug: string } }) => {
               with fast delivery and exceptional customer support. Shop now and
               experience seamless, stress-free shopping!
             </p>
+            
             <div className="flex mt-2 items-center mb-3">
               {/* Color */}
               <div className="flex">
                 <span className="mr-3 text-myBlue/80 font-semibold text-base">
                   Color
                 </span>
-                {slug[0].color.map((item, i) => (
+                {currentProduct.color.map((item, i) => (
                   <button
                     key={i}
                     onClick={() => setCartItem({ ...cartItem, color: item })}
-                    className="border-2 border-gray-300 mr-1 bg-white rounded-full w-6 h-6 
-            focus:outline-none active:border-black focus:border-black"
+                    className="border-2 border-gray-300 mr-1 bg-white rounded-full w-6 h-6 focus:outline-none active:border-black focus:border-black"
                     style={{ backgroundColor: item }}
                   />
                 ))}
               </div>
+              
               {/* Size */}
               <div className="flex ml-6 items-center">
                 <span className="mr-3 text-myBlue/80 font-semibold text-base">
                   Size
                 </span>
-
                 <div className="form-control w-fit max-w-xs bg-myWhite h-fit">
                   <select
                     onChange={(e) =>
@@ -113,7 +102,7 @@ const SlugPage = ({}: { params: { slug: string } }) => {
                     <option disabled defaultValue={"Select Size"}>
                       Select Size
                     </option>
-                    {slug[0].size.map((item, i) => (
+                    {currentProduct.size.map((item, i) => (
                       <option key={i}>{item}</option>
                     ))}
                   </select>
@@ -132,8 +121,7 @@ const SlugPage = ({}: { params: { slug: string } }) => {
                     qty: cartItem.qty <= 1 ? 1 : --cartItem.qty,
                   })
                 }
-                className="outline outline-myWhite outline-1 text-myWhite group hover:outline-myPeach 
-       btn bg-myBlue/60 hover:bg-myBlue/80 h-fit w-fit rounded-2xl"
+                className="outline outline-myWhite outline-1 text-myWhite group hover:outline-myPeach btn bg-myBlue/60 hover:bg-myBlue/80 h-fit w-fit rounded-2xl"
               >
                 <div className="mr-2 h-4 w-4 group-hover:text-myPeach duration-300 text-lg">
                   <TiMinus />
@@ -147,8 +135,7 @@ const SlugPage = ({}: { params: { slug: string } }) => {
                 onClick={() =>
                   setCartItem({ ...cartItem, qty: ++cartItem.qty })
                 }
-                className="outline outline-myWhite outline-1 text-myWhite group hover:outline-myPeach 
-       btn bg-myBlue/60 hover:bg-myBlue/80 h-fit w-fit rounded-2xl"
+                className="outline outline-myWhite outline-1 text-myWhite group hover:outline-myPeach btn bg-myBlue/60 hover:bg-myBlue/80 h-fit w-fit rounded-2xl"
               >
                 <div className="mr-2 h-4 w-4 group-hover:text-myPeach duration-300 text-lg">
                   <TiPlus />
@@ -156,15 +143,15 @@ const SlugPage = ({}: { params: { slug: string } }) => {
                 Add
               </button>
             </div>
+            
             {/* Divider */}
             <div className="divider mt-1 mb-2"></div>
 
-            <div className="flex items-center justify-between -pt-4">
+            <div className="flex items-center -pt-4 justify-between">
               {/* Price */}
               <div>
                 <span
-                  className={`scroll-m-20 text-2xl font-semibold tracking-tight text-myBlue
-                  ${
+                  className={`scroll-m-20 text-2xl font-semibold tracking-tight text-myBlue ${
                     cartItem.discount > 0 &&
                     "line-through decoration-2 decoration-myPeach"
                   }`}
@@ -172,12 +159,9 @@ const SlugPage = ({}: { params: { slug: string } }) => {
                   ${cartItem.price * cartItem.qty}
                 </span>
 
-                {/* Dicounted price */}
-                {slug[0].discount > 0 && (
-                  <span
-                    className="ml-3 scroll-m-20 text-2xl font-semibold tracking-tight
-                    text-myBlue"
-                  >
+                {/* Discounted price */}
+                {currentProduct.discount > 0 && (
+                  <span className="ml-3 scroll-m-20 text-2xl font-semibold tracking-tight text-myBlue">
                     $
                     {(cartItem.price -
                       (cartItem.price * cartItem.discount) / 100) *
@@ -188,10 +172,8 @@ const SlugPage = ({}: { params: { slug: string } }) => {
 
               <AddToCartToast cartItem={cartItem} />
             </div>
-            <button
-              className="mt-4 outline outline-myWhite outline-1 text-myWhite group hover:outline-myPeach 
-       btn bg-myBlue/60 hover:bg-myBlue/80 h-5 w-full rounded-3xl"
-            >
+            
+            <button className="mt-4 outline outline-myWhite outline-1 text-myWhite group hover:outline-myPeach btn bg-myBlue/60 hover:bg-myBlue/80 h-5 w-full rounded-3xl">
               <div className="mr-2 mb-1 h-4 w-4 group-hover:text-myPeach duration-300 text-xl">
                 <PiHeartFill />
               </div>
